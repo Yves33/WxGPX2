@@ -1,0 +1,29 @@
+What's new
+===========
+Rewrote many things from scrath much cleaner code, etc
+
+1 - Internals & Track storage
++ switched from hacked numpy recarray to standard pandas.DataFrame for track object storage
++ gpx parser is now build on minidom (included in python stdlib, and does not require lxml)
++ export and import csv and tsv files, with optionnal compression.
++ dropped support for numpy compressed files.
++ the program will reject files missing 'time' information (formerly it used to generate fake times based on a user provided interval)
+It should be noted that the gpx specification does not make time tag mandatory
+
+2 - Configuration file
++ configuration is now stored as json with comments. less readable, but far less code to handle.
+
+3 - Map widget
++ now based on PILLOW (GL backend is no longer available)
++ zoom in and zoom out buttons on map
+
+4 - Time widget
++ removed the option for 3rd graph
++ completely rewrote pan & zoom features
+
+5 - Plugins
++ all plugins were rewritten to work on pandas dataframe
++ speedmeter plugin has been rewritten using matplotlib framework (now named gauge)
+
+2 - Scripts:
++ rewrote most scripts. deprecated the remaining ones.

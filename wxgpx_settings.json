@@ -1,0 +1,70 @@
+{
+"general":{
+    "transtable":{
+        // automatic translation of field names". we use gpx conventions and garmin extensions rather than fit conventions
+        // automatic translation is case sensitive
+        // fields mapped to null will be discarded
+        "altitude":"ele",
+        "ball_speed":null,
+        "enhanced_speed":"espeed",
+        "enhanced_altitude":"eele",
+        "heartrate":"hr",
+        "heart_rate":"hr",
+        "cadence":"cad",
+        "temperature":"atemp"
+        },
+    "units":{
+            // available units are m/s, kts, km/h, mph, m, ft km, mi, m/s², s, s.i, deg, s/m, s/km, s/mi
+            "lat": "deg",
+            "lon": "deg",
+            "distance": "m",
+            "seconds": "s",
+            "speed": "m/s",
+            "heading": "deg",
+            "ele": "m",
+            "deltat": "s",
+            "deltaxy": "m",
+            "deltaz": "m",
+            "ascspeed": "m/s",
+            "awaa":"deg",
+            "awar":"deg",
+            "aws":"m/s",
+            "uwa":"deg",
+            "uws":"m/s"
+            },
+    "plugins":["cartesianplot",
+                "polarplot",
+                "histogramplot",
+                "gauge",
+                "table",
+                "measure",
+                "shell",
+                "waypoints",
+                "_blurygauge"],
+    "pluginpath":"./plugins",
+    "scriptpath":"./scripts"
+    },
+"mapview":{
+    "services":{
+        // services should be described the following way
+        // friendly_name:[friendly_name, url,cache_dir]
+        // for openstreet, opencycle, .. you could add ?apikey=yourAPIkey at the end of url
+        // todo: provide min/max zoom information
+        "Google maps": ["Google maps", "http://mt1.google.com/vt/lyrs=m@132&hl=en&x={x}&y={y}&z={z}", "google_maps"], 
+        "Google terrain": ["Google terrain", "http://mt1.google.com/vt/lyrs=t&x={x}&y={y}&z={z}", "google_terrain"], 
+        "Google terrain+maps": ["Google terrain+maps", "http://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}", "google_terrain_maps"], 
+        "Google satellite": ["Google satellite", "http://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}","google_satellite"], 
+        "Google satellite+maps": ["Google satellite+maps", "http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}", "google_satellite_maps"], 
+        "Open street maps": ["Open street maps", "https://c.tile.openstreetmap.org/{z}/{x}/{y}.png", "openstreetmaps"], 
+        "Open cycle maps": ["Open cycle maps", "http://b.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png", "opencyclemaps"], 
+        "Open public transport": ["Open public transport", "http://tile.xn--pnvkarte-m4a.de/tilegen/{z}/{x}/{y}.png", "openpublictransport"], 
+        "Virtual earth maps": ["Virtual earth maps", "http://a1.ortho.tiles.virtualearth.net/tiles/r{q}.jpeg?g=50", "virtualearth_maps"], 
+        "Virtual earth satellite": ["Virtual earth satellite", "http://a1.ortho.tiles.virtualearth.net/tiles/a{q}.jpeg?g=50", "virtualearth_satellite"], 
+        "Virtual earth satellite+maps": ["Virtual earth satellite+maps", "http://a1.ortho.tiles.virtualearth.net/tiles/a{q}.jpeg?g=50", "virtualearth_satellite_maps"]
+        },
+    "service": "Google maps",
+    "useragent": "Mozilla/5.0 (X11; Fedora; Linux) Gecko/20100101 Firefox/63.0",
+    "numthreads":5,
+    "cachedir":null
+    }
+}
