@@ -1,5 +1,7 @@
 
 [TOC]
+# INTRODUCTION
+A software to display and analyse gpx anf fit gps tracks. wxgpx2 is a partial rewrite of wxgpx-phoenix, which is  no longer maintained.
 
 # LICENSE
 
