@@ -3,6 +3,7 @@
 # INTRODUCTION
 A software to display and analyse gpx anf fit gps tracks. wxgpx2 is a partial rewrite of wxgpx-phoenix, which is  no longer maintained.
 
+![image info](./docs/waypoints.png)
 # LICENSE
 
 wxGPGPSport is distributed under the MIT public license. A copy of the MIT public license is bundled in the application.  
@@ -417,7 +418,7 @@ loadgates(pickle.load(open("mygates.pkl", "rb")), layer='measure')
 
 # NOTES
 
-The code to load working can also work in the frozen version (provided you copy the plugins folder to frozen app root folder).
+The code to load plugins can also work in the frozen version (provided you copy the plugins folder to frozen app root folder).
 In order to get the plugins to work, the following extra modules are imported by pyinstaller.
 
 ```python
