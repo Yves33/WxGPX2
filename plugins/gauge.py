@@ -274,7 +274,7 @@ class GaugePlugin(wx.Panel):
         x,y=self.GetClientSize() ## event.Size()
         if x*y==0:  ## on application startup, we will receive a bunch of size events which we should ignore
             return
-        self.gpxcanvas.resize(x,y)
+        #self.gpxcanvas.resize(x,y)
         self.gpxcanvas.SetSize(*self.GetClientSize())
         self.gpxfig.set_size_inches(float(x)/self.gpxfig.get_dpi(),float(y)/self.gpxfig.get_dpi())
         if self.gauge:

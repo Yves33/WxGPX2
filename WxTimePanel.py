@@ -268,7 +268,8 @@ class WxLineScatterWidget(wx.Panel):
         
     def OnSize(self,event):
         x,y=self.GetClientSize()
-        self.gpxcanvas.resize(x,y)
+        #self.gpxcanvas.resize(x,y)
+        self.gpxcanvas.SetSize(*self.GetClientSize())
         self.gpxfig.set_size_inches(float(x)/self.gpxfig.get_dpi(),float(y)/self.gpxfig.get_dpi())
         ## we want bottom clip to be 0.3 when y<150 and 0.1 when y>350
         frac=np.clip( (y-150)/(350-150),0.0,1.0)

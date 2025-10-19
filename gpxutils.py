@@ -40,22 +40,26 @@ def parsefitfile(filename):
     a = FitFile(filename)
     a.parse()
     series={}
+    messages=[]
     for r in a.get_messages(name='record'):
         # for some strange reason, I sometimes have duplicated fields...
         d={}
         for f in r.fields:
             d[f.name]=f.value
-        for f,v in d.items():
-            if f not in series:
-                series[f]=[]
-            series[f].append(v)
+        ## works only with a very regular fit file. but on suunto, some records may be incomplete!
+        #for f,v in d.items():
+        #    if f not in series.keys(): 
+        #        series[f]=[]
+        #    series[f].append(v)
+        ## safer to just save all dicts!
+        messages.append(d)
 
-        #for f in r.fields:
-        #    if f.name not in series:
-        #        series[f.name]=[]
-        #    series[f.name].append(f.value)
     #assert( len( set([len(s) for s in series.values()]))==1 )
-    df=pd.DataFrame(series)
+    #df=pd.DataFrame(series)
+    df=pd.DataFrame.from_records(messages,index='timestamp')\
+        .reset_index()\
+        .interpolate()\
+        .bfill()
     ## tidy up all this!
     df['lat']=df.position_lat/11930464.71
     df['lon']=df.position_long/11930464.71

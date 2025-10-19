@@ -159,11 +159,11 @@ class PanZoomFactory:
             ylo,yhi=ax.get_ylim()
             event.ydata=(event.y-b)/(t-b)*(yhi-ylo)+ylo
             return 'right'
-        if ptinrect(l,t,r,t+height,event.x,event.y) and xtickparams['right']:
+        if ptinrect(l,t,r,t+height,event.x,event.y) and xtickparams['top']:
             ylo,yhi=ax.get_ylim()
             event.ydata=(event.y-b)/(t-b)*(yhi-ylo)+ylo
             return 'top'
-        if ptinrect(l,b-height,r,b,event.x,event.y) and xtickparams['left']:
+        if ptinrect(l,b-height,r,b,event.x,event.y) and xtickparams['bottom']:
             ylo,yhi=ax.get_ylim()
             event.ydata=(event.y-b)/(t-b)*(yhi-ylo)+ylo
             return 'bottom'
