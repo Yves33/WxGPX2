@@ -190,7 +190,7 @@ class WxLineScatterWidget(wx.Panel):
             ax.get_lines()[0].set_markersize(lineprops['markersize'])
             ax.set_ylabel(plot+' ('+self.gpx[plot].unit.sym+')')
             if lineprops['autoscale']:
-                ax.set_ylim(min(ydata),max(ydata))
+                ax.set_ylim(np.nanmin(ydata),np.nanmax(ydata))
             self.format_x_axis()
             ax.set_visible(True)
         else:

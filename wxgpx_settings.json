@@ -60,7 +60,8 @@
         "Open public transport": ["Open public transport", "http://tile.xn--pnvkarte-m4a.de/tilegen/{z}/{x}/{y}.png", "openpublictransport"], 
         "Virtual earth maps": ["Virtual earth maps", "http://a1.ortho.tiles.virtualearth.net/tiles/r{q}.jpeg?g=50", "virtualearth_maps"], 
         "Virtual earth satellite": ["Virtual earth satellite", "http://a1.ortho.tiles.virtualearth.net/tiles/a{q}.jpeg?g=50", "virtualearth_satellite"], 
-        "Virtual earth satellite+maps": ["Virtual earth satellite+maps", "http://a1.ortho.tiles.virtualearth.net/tiles/a{q}.jpeg?g=50", "virtualearth_satellite_maps"]
+        "Virtual earth satellite+maps": ["Virtual earth satellite+maps", "http://a1.ortho.tiles.virtualearth.net/tiles/a{q}.jpeg?g=50", "virtualearth_satellite_maps"],
+        "ArcGIS world imagery":["ArcGIS world imagery","http://services.arcgisonline.com/ArcGis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png","arcgis_world_imagery"]
         },
     "service": "Google maps",
     "useragent": "Mozilla/5.0 (X11; Fedora; Linux) Gecko/20100101 Firefox/63.0",
