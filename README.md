@@ -1,7 +1,7 @@
 
 [TOC]
 # INTRODUCTION
-A software to display and analyse gpx anf fit gps tracks. wxgpx2 is a partial rewrite of wxgpx-phoenix, which is  no longer maintained.
+A software to display and analyse gpx and fit gps tracks. wxgpx2 is a partial rewrite of wxgpx-phoenix, which is  no longer maintained.
 
 ![image info](./docs/waypoints.png)
 # LICENSE
@@ -23,12 +23,12 @@ wxGPGPSport requires the following modules:
 
 On linux platform, all required packages can be installed using you package manager (synaptic for debian, yumex or dnf for fedora).  
 On windows and OSX platform, all required modules (see next paragraph) can be installed through pip.  
-On OsX plattform, the program used to work, but this newer version has not been tested yet.
+On OsX platform, the program used to work, but this newer version has not been tested yet.
 
 `py -m pip install package_name`
 
 ## conda virtual env
-If you have a conda environnement setup, you should be able to create a virtual env suitable to run program using the command.  
+If you have a conda environement setup, you should be able to create a virtual env suitable to run program using the command.  
 `conda create -n wxgpx matplotlib numpy pandas requests pillow wxpython` 
 
 ## Pyinstaller packages
@@ -56,7 +56,7 @@ At startup, the software window is divided into 3 main panels:
   - Garmin fit files (\*.fit)
   - csv or tsv files with the columns 'time',lat',lon'
 - If no information is found concerning speed in the file, the speed is calculated according to GPS positions and time. Some other information (heading,displacement, etc...) are calculated by the software and everything is stored in a table (to learn more about this table, see plugins section, table and shell).
-- Most tracks have (few) missing points. If any, the program will propose to genearte missing data using linar interpolation or cubic spline interpolation if scipy is installed
+- Most tracks have (few) missing points. If any, the program will propose to generate missing data using linear interpolation or cubic spline interpolation if scipy is installed
 
 ## Using the map panel
 
@@ -69,8 +69,8 @@ At startup, the software window is divided into 3 main panels:
 - When you move the mouse, an indicator (blue arrowhead by default) will indicate the current point (trace point closest to mouse pointer). The position of the cursor is updated in time panel (see below).
 
 - You can customize the information displayed on map by double clicking on the map. A dialog will appear with several options:
-  - Key for latitude: 'lat', unless you are not deealing with track1 layer 1
-  - Key for longitude: 'lon', unless you are not deealing with track1 layer 1
+  - Key for latitude: 'lat', unless you are not dealing with track1 layer 1
+  - Key for longitude: 'lon', unless you are not dealing with track1 layer 1
   - Key for color: key to use for false colors track representation. False colors vary from blue (for minimum) to red (for maximum). If you do not want false colors, you may enter the hexadecimal representation of the colour ("#RRGGBB"), or None.
   - Line width: width of line used to display gps track and current indicator. Default is 2.  
   - Key for vector angle: key to use (degrees) for vector angular data. (usually apparent wind absolute direction)
@@ -84,7 +84,7 @@ Currently, the colormap can only be modified through the shell plugin (see shell
 
 - The time panel displays a graph where speed (by default) is plotted against time (by default).  
 
-- The mouse wheel on X- and Y- axis enables you to zoom at some specific portion of the curve (it may be necessary to click on the panel in order to give focuss to this panel).  
+- The mouse wheel on X- and Y- axis enables you to zoom at some specific portion of the curve (it may be necessary to click on the panel in order to give focus to this panel).  
 - Left click+drag on X- and Y- axis moves the area represented.  
 - Right click-drag on X- and Y- axis scales the area represented.  
 - Double click on graph to choose graph parameters. Most parameters should be pretty self-explanatory. You can plot up to 2 overlapping graphs with same X-axis. X axis values have to be incrementing (choose one of time, idx, distance)
@@ -95,7 +95,7 @@ Currently, the colormap can only be modified through the shell plugin (see shell
   
 ### Using the status bar
 
-The status bar displays whatever information you find usefull. In order to customiaze the display, double click on the status bar and enter the text you want to display.
+The status bar displays whatever information you find useful. In order to customize the display, double click on the status bar and enter the text you want to display.
 Any word enclosed between % signs will be replaced by current value of this field. Fo exemple, to display index, speed and ele, you'd use the formatstring:
 `Index : %idx% Speed (knots): %speed% Altitude (m): %ele%`  
 
@@ -118,7 +118,7 @@ Any word enclosed between % signs will be replaced by current value of this fiel
 - Plugin tabs can be moved to reorder them, but they can also be docked on the side of the window so that several plugins can be displayed at the same time.  
 - Plugins cannot be moved outside the plugin panel.
 - Plugins with graphs can be zoomed / Pan with mouse.
-- Some plugins can be conigured by couble clicking on panel.
+- Some plugins can be configured by double clicking on panel.
 
 ## Plugins
 
@@ -139,22 +139,22 @@ Identical to scatterplot plugin, except that it displays an data in polar coordi
 
 - Double click on graph to set up plot parameters.
 - Use mouse wheel to zoom unzoom.
-- The plugin can also display an enveloppe of points.
+- The plugin can also display an envelope of points.
 
 ### Gauge plugin
 
-The gauge plugins display in real time one of the parameters choosen among available data (see table plugin).
+The gauge plugins display in real time one of the parameters chosen among available data (see table plugin).
 
 - Double click on graph to customize display.
   
 ### Table plugin
 
-THe table plugin dispalys a table view of yout track. A typical usage of the table plugin is to disable or correct abnormal points (speed to high, ...)  
+The table plugin displays a table view of yout track. A typical usage of the table plugin is to disable or correct abnormal points (speed to high, ...)  
 
 - The 'ok' column with checkbox corresponds to enabled/disabled points.
 - The table can be sorted according to one column by right clicking on column header and selecting appropriate option. Be carefull that the program may crash if you delete a required column.
 - Rows can be enables/disabled by selecting them and right clicking in row numbers and selecting the appropriate option.
-- You ~~may~~ will experience some bugs...The plugin is not thoroughfully tested.
+- You ~~may~~ will experience some bugs...The plugin is not extensively tested.
 - It is not possible to delete points from table plugin. you **must** use the time view for deletion operations.
   
 ### Measurement plugin
@@ -217,7 +217,7 @@ gpx['ok']=gpx.speed.unit.scaled>10
 ```
 
 - Creating and deleting new columns:  
-You can create an extra column in the table and manipulate its values by providing its name. Note that inserting,deleting (and myabe sorting) column may cause loss of column metadatas (presently units). you can save and restore this data using attrs_save and attrs_load.  
+You can create an extra column in the table and manipulate its values by providing its name. Note that inserting,deleting (and maybe sorting) column may cause loss of column metadatas (presently units). You can save and restore this data using attrs_save and attrs_load.  
 
 ```python
 gpx['accel']=np.ediff1d(gpx.speed,to_end=np.nan)
@@ -242,9 +242,9 @@ WxQuery     # also available as query; access to simple gui    (see the moule Wx
 ```
 
 - The global objects may not be available if you try to import a script file.  
-For script files that define usefull functions ("libxxx.py"), you can gain access to functions using sh.run("libxxx.py").
+For script files that define useful functions ("libxxx.py"), you can gain access to functions using sh.run("libxxx.py").
 
-- Whenever you alter the data through shell or script, you must informa other panles and plugins. This can be done with the following commands:
+- Whenever you alter the data through shell or script, you must inform other panels and plugins. This can be done with the following commands:
 
 ```python
 ## minimal version
@@ -293,7 +293,7 @@ Computes the VMG and apparent wind from boat speed, boat heading and user provid
 -- vmg : velocity made good (same units as boat speed).  
 
 - **Windsurf_statistics**
-Computes some basic statistics about my windsurf sessiions.
+Computes some basic statistics about my windsurf sessions.
 
 - **Windsurf_bestruns.py**  
 Computes and dumps some information about best 5s, 10s 30s 500m runs.
@@ -305,12 +305,12 @@ Computes the alpha250-500 or 1000 speed.
 Will set speed units (speed, vmg, etc..) to knots and distance units to km.
 
 - **Split_gpx_tracks**  
-Splits gpx files with multiple tracks in multiple independant gpx files.
+Splits gpx files with multiple tracks in multiple independent gpx files.
 
 - **Import**
 Imports and merges additional gpx tracks with currently opened file. This enabled displaying several tracks on the map/graphs.
 supports several join styles:  
-++ 'innner' keeps only the kommon time stamps
+++ 'innner' keeps only the common time stamps
 ++ 'outer'  extends the current file to keep all timestamps (including new ones)
 ++ 'keep'   keeps the current time range
 ++ 'async'  recreates fake time ranges. Assumes that first point in each track is synchronous.
@@ -331,10 +331,10 @@ time        # time of recording. if absent from gpx file, will be automatically 
 seconds     # time in seconds since beginning of recordings
 lat         # latitude
 lon         # longitude
-idx         # the index of point in file. Usefull for scripting
+idx         # the index of point in file. Useful for scripting
 deltat      # interval (s) between two consecutive points
-deltaxy     # distance (m) between two consecutive points; calculated from lat,lon
-heading     # course (in degrees); calculated from lat,lon
+deltaxy     # distance (m) between two consecutive points; calculated from lat, lon
+heading     # course (in degrees); calculated from lat, lon
 speed       # speed. If not found in file, speed is calculated from position and time
 distance    # cumulative distance. if not found in file, uses the cumulative sum of deltaxy
 ```
@@ -426,4 +426,4 @@ from wx.py import shell
 import  wx.grid
 ```
 
-If you want to develop plugins that need to import extra python modules, you'll have to install a full python environment (in any case, installing a full environnement is better to develop plugins and scripts).
+If you want to develop plugins that need to import extra python modules, you'll have to install a full python environment (in any case, installing a full environement is better to develop plugins and scripts).
