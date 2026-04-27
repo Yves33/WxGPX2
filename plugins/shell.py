@@ -24,7 +24,7 @@ class WxShell(wx.Panel):
         self.scriptcombo=wx.ComboBox(self,choices=['Browse file...'],value='Browse file...', style=wx.CB_READONLY)
         self.Bind(wx.EVT_COMBOBOX_DROPDOWN, self.UpdateScripts, self.scriptcombo)
         sizer.Add(self.scriptcombo,0,wx.EXPAND)
-        self.pyshell = shell.Shell(self, -1, introText='Python Shell')
+        self.pyshell = shell.Shell(self, -1, execStartupScript=False, introText='Python Shell')
         sizer.Add(self.pyshell,1,wx.EXPAND)
         self.gpx=None
         #standard events
